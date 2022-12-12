@@ -11,9 +11,8 @@ import com.boydlever.auth.models.User;
 public interface UserRepository extends CrudRepository <User,Long>{
 	Optional<User> findByEmail(String email);
 	
-	
 }
 	
-	//The relationship between user and book is one to many
-	//The foreign key is stored in book: book_id
-	//The MySQL database for the user will not change
+	//Relationship between user and book is one to many
+	//Foreign key is stored in book: book_id
+	//MySQL database for the user will not change

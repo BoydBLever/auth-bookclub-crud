@@ -71,13 +71,14 @@ public class UserController {
     		return "redirect:/dashboard";
     }
     
-    @GetMapping("/dashboard")
-    public String dashboard(HttpSession session) {
-    	if(session.getAttribute("userId") ==null) {
-    		return "redirect:/";
-    	}
-    	return "dashboard.jsp";
-    }
+//    @GetMapping("/dashboard")
+//    public String dashboard(HttpSession session) {
+//    	if(session.getAttribute("userId") ==null) {
+//    		return "redirect:/";
+//    	}
+//    	return "dashboard.jsp";
+//    }
+    
     @GetMapping("/logout")
     public String logout(HttpSession session) {
     	session.invalidate();
