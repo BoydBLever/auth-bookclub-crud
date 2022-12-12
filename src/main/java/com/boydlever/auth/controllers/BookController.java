@@ -20,4 +20,10 @@ public class BookController {
     	}
     	return "dashboard.jsp";
     }
+    //Create book
+    //display the form
+    @GetMapping("/books/new")
+    public String displayNewBookForm() {
+    	return "newBook.jsp";
+    }
 }

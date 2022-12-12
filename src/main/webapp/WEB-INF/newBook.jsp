@@ -19,6 +19,37 @@
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-   
+	<div class="container mt-5">
+    	<h1> WELCOME, <c:out value="${userName }"/> </h1>
+   		<p> <a href="/logout">Logout</a>
+   		<form:form action="/donations/new" method="POST" modelAttribute="newDonation">
+  <p>
+        <form:label path="donationName">Donation Name:</form:label>
+        <form:errors path="donationName"/>
+        <form:input path="donationName"/>
+    </p>
+     <p>
+        <form:label path="quantity">Quantity:</form:label>
+        <form:errors path="quantity"/>
+        <form:input type="number" path="quantity"/>
+    </p>
+     <p>
+        <form:label path="description">Description:</form:label>
+        <form:errors path="description"/>
+        <form:textarea path="description"></form:textarea>
+    </p>
+    <p>
+    <form:label path="donor">Donor:</form:label>
+    <!-- THE CODE BELOW WILL NOT BE HERE AFTER AUTH -->
+    <form:select path="donor">
+    	<c:forEach var="eachUser" items="${userList}">
+    	<form:option value="${eachUser.id}">${eachUser.userName} (${eachUser.email})</form:option>
+    	</c:forEach>
+    </form:select>
+    <form:errors path="donor"/>
+    </p>
+    <button type="submit">Add new donation</button>
+</form:form>
+ 	</div>
 </body>
 </html>
