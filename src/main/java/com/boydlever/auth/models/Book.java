@@ -31,7 +31,7 @@ public class Book {
 	private String bookName; //bookname is title
 	
 	@NotNull
-	@Min(value=0, message="Include author's name.")
+	@Size(min=5, message="Include author's name.")
 	private String author;
 	
 	@NotNull
