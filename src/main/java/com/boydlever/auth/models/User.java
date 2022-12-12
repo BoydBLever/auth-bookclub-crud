@@ -44,7 +44,7 @@ public class User {
     private String confirm;
     
     @OneToMany(mappedBy="book", fetch = FetchType.LAZY)
-	private List<Book> books; //joined donations
+	private List<Book> books; //joined books
     
     //feel free to add created at and updated at; it doesn't really matter. (?)
     //I'm just going to follow the platform and I'm not going to add this one here.
@@ -94,6 +94,14 @@ public class User {
 
 	public void setConfirm(String confirm) {
 		this.confirm = confirm;
+	}
+
+	public List<Book> getBooks() {
+		return books;
+	}
+
+	public void setBooks(List<Book> books) {
+		this.books = books;
 	}
 	
 }
