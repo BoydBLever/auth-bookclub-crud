@@ -45,7 +45,7 @@ public class UserController {
       //2.2 If no errors, set userId in session and redirect
         session.setAttribute("userId", registeredUser.getId());
         session.setAttribute("userName", registeredUser.getUserName());
-        return "redirect:/dashboard";
+        return "redirect:/books";
         
         // No errors! 
         // TO-DO Later: Store their ID from the DB in session, 
@@ -68,17 +68,9 @@ public class UserController {
     	//2.2 if no errors, get the user infom from user and set UserId in the session
     	session.setAttribute("userId", loginUser.getId());
     	session.setAttribute("userName", loginUser.getUserName());
-    		return "redirect:/dashboard";
+    		return "redirect:/books";
     }
-    
-//    @GetMapping("/dashboard")
-//    public String dashboard(HttpSession session) {
-//    	if(session.getAttribute("userId") ==null) {
-//    		return "redirect:/";
-//    	}
-//    	return "dashboard.jsp";
-//    }
-    
+        
     @GetMapping("/logout")
     public String logout(HttpSession session) {
     	session.invalidate();

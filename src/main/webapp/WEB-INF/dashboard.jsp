@@ -23,8 +23,8 @@
 		<h1> WELCOME, <c:out value="${userName }"/>! </h1>
    		<p> <a href="/books/new">Add a book</a> | 
    		<a href="/logout">Logout</a> </p>
-   		
    		<!-- TABLE: DO SOME COPY AND PASTE FROM "YESTERDAY'S" ONE-TO-MANY ASSIGNMENT-->
+   	<table class="table">
    		<thead>
 		<tr>
 			<th>ID</th>
@@ -34,18 +34,19 @@
 			<th>Actions</th>
 		</tr>
 	</thead>
-	<tbody>
-		<c:forEach var="eachBook" items="${bookList }">
-			<tr>
-				<td> ${eachBook.id} </td> <!-- ID -->
-				<td> <a href="/books/${eachBook.id }">${eachBook.bookName}</a></td><!-- Book -->
-				<td> <c:out value="${eachBook.author }"/></td><!-- Author -->
-				<%-- <td> <c:out value="${eachBook.book.userName }"/></td> --%>
-				<td> <a class="btn btn-primary" href="/books/edit/${eachBook.id }">Edit</a></td>
-			</tr>
-		</c:forEach>
-	</tbody>
-</table>
+		<tbody>
+			<c:forEach var="eachBook" items="${bookList }">
+				<tr>
+					<td> ${eachBook.id} </td> <!-- ID -->
+					<td> <a href="/books/${eachBook.id }">
+								<c:out value="${eachBook.bookName}"/></a></td><!-- Book -->
+					<td> <c:out value="${eachBook.author }"/></td><!-- Author -->
+					<%-- <td> <c:out value="${eachBook.book.userName }"/></td> --%>
+					<td> <a class="btn btn-primary" href="/books/edit/${eachBook.id }">Edit</a></td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
    		
    </div>
 </body>
