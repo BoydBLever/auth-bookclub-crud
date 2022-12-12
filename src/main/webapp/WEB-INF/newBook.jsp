@@ -38,8 +38,8 @@
         	<form:errors path="description"/>
         	<form:textarea path="description" class="form-control"></form:textarea>
     </p>
-    		<form:hidden path="book" value="${userId}" /> <!-- I set path = book, but Heidi used donor. Why? -->
-    		<button type="submit">Add new book</button>
+    		<form:hidden path="book" value="${userId}" /> <!-- I set path = book, but Heidi used donor, in Book.java (models). Why? -->
+    		<button type="submit" class="btn btn-primary">Add new book</button>
 		</form:form>
  	</div>
 </body>
