@@ -1,7 +1,5 @@
 package com.boydlever.auth.controllers;
 
-import java.util.List;
-
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.boydlever.auth.models.Book;
-import com.boydlever.auth.models.User;
 import com.boydlever.auth.services.BookService;
 
 @Controller
@@ -43,7 +40,7 @@ public class BookController {
 			return "newBook.jsp";
 		}else {
 			bookService.createBook(newBook);
-			return "redirect:/dashboard";
+			return "redirect:/books";
 		}
 	}
 }

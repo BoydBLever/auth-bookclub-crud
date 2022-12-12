@@ -22,23 +22,23 @@
 	<div class="container mt-5">
     	<h1> WELCOME, <c:out value="${userName }"/> </h1>
    		<p> <a href="/logout">Logout</a>
-   		<form:form action="/books/new" method="POST" modelAttribute="newBook">
+   		<form:form action="/books/new" method="POST" modelAttribute="newBook" class="form">
   <p>
         	<form:label path="bookName">Book Name:</form:label>
         	<form:errors path="bookName"/>
-       		<form:input path="bookName" class="form-control"/>
+       		<form:input type="text" path="bookName" class="form-control"/>
     </p>
      <p>
         	<form:label path="author">Author:</form:label>
         	<form:errors path="author"/>
-        	<form:input path="author" class="form-control"/>
+        	<form:input type="text" path="author" class="form-control"/>
     </p>
      <p>
         	<form:label path="description">Description:</form:label>
         	<form:errors path="description"/>
         	<form:textarea path="description" class="form-control"></form:textarea>
     </p>
-    		<form:hidden path="book" value="${userId}" /> <!-- I set path = book, but Heidi used donor, in Book.java (models). Why? -->
+    		<form:hidden path="book" value="${userId}" /> <!-- I set path = book. Heidi used donor. In Book.java (models) I use Book book. -->
     		<button type="submit" class="btn btn-primary">Add new book</button>
 		</form:form>
  	</div>
