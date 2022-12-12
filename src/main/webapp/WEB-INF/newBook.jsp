@@ -29,9 +29,9 @@
        		<form:input path="bookName" class="form-control"/>
     </p>
      <p>
-        	<form:label path="quantity">Quantity:</form:label>
-        	<form:errors path="quantity"/>
-        	<form:input type="number" path="quantity" class="form-control"/>
+        	<form:label path="author">Author:</form:label>
+        	<form:errors path="author"/>
+        	<form:input path="author" class="form-control"/>
     </p>
      <p>
         	<form:label path="description">Description:</form:label>

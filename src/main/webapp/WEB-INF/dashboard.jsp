@@ -11,7 +11,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Cheatsheet</title>
+    <title>Dashboard</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/main.css"> <!-- change to match your file/naming structure -->
@@ -19,7 +19,7 @@
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <h1> WELCOME, <c:out value="${userName }"/> </h1>
+    <h1> WELCOME, <c:out value="${userName }"/>! </h1>
    <p> <a href="/logout">Logout</a>
 </body>
 </body>
