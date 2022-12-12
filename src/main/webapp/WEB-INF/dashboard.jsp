@@ -31,7 +31,7 @@
 			<th>Book</th>
 			<th>Author</th>
 			<!-- <th>-</th> -->
-			<th>Actions</th>
+			<th colspan="2">Actions</th>
 		</tr>
 	</thead>
 		<tbody>
@@ -42,8 +42,12 @@
 								<c:out value="${eachBook.bookName}"/></a></td><!-- Book -->
 					<td> <c:out value="${eachBook.author }"/></td><!-- Author -->
 					<%-- <td> <c:out value="${eachBook.book.userName }"/></td> --%>
-					<td> <a class="btn btn-primary" href="/books/edit/${eachBook.id }">Edit</a>
-					<a class="btn btn-danger" href="/books/delete/${eachBook.id }">Delete</a></td>
+					<td> <a class="btn btn-success" href="/books/edit/${eachBook.id }">Edit</a></td>
+					<td>
+					<form action="/books/delete/${eachBook.id}" method="post">
+					<input type="hidden" name="_method" value="delete"/>
+					<input class="btn btn-danger" type="submit" value="Delete" />
+					</td>
 				</tr>
 			</c:forEach>
 		</tbody>

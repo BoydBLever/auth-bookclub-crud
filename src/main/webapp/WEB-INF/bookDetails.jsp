@@ -19,11 +19,25 @@
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h1>Book Details</h1>
-<h2>Book Name: <c:out value="${book.bookName }"/></h2>
-<h2>Author: <c:out value="${book.author }"/></h2>
-<h2>Description: <c:out value="${book.description }"/></h2>
-<p> <a href="/books"> Go Back</a></p>
+<div class="container mt-5">
+	<h1>Welcome, <c:out value="${userName }"/>!</h1>
+	<h2>Book Details</h2>
+	<table class="table">
+	<tr>
+		<td> Book Name: </td>
+		<td> <c:out value="${book.bookName }"/> </td>
+	</tr>
+	<tr>
+		<td> Author: </td>
+		<td> <c:out value="${book.author }"/> </td>
+	</tr>
+	<tr>
+		<td> Thoughts: </td>
+		<td> <c:out value="${book.description }"/> </td>
+	</tr>
+	</table>
+	<p> <a href="/books"> Go Back</a></p>
+</div>
 
 </body>
 </html>
