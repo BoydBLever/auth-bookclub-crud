@@ -11,10 +11,12 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Welcome!</title>
+    <title>Book Club</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
+	<h1>Book Club</h1>
+	<h4> A place for friends to share thoughts</h4>
    <div class="container mt-5">
    		<h1>Register</h1>
    		<form:form action="/register" method="POST" modelAttribute="newUser">

@@ -20,7 +20,7 @@
 </head>
 <body>
    <div class="container mt-5"> 
-		<h1> WELCOME, <c:out value="${userName }"/>! </h1>
+		<h1> WELCOME to the Book Club, <c:out value="${userName }"/>! </h1>
    		<p> <a href="/books/new">Add Book</a> | 
    		<a href="/logout">Logout</a> </p>
    		<!-- TABLE: DO SOME COPY AND PASTE FROM "YESTERDAY'S" ONE-TO-MANY ASSIGNMENT-->
@@ -30,8 +30,7 @@
 			<th>ID</th>
 			<th>Book</th>
 			<th>Author</th>
-			<!-- <th>-</th> -->
-			<th colspan="2">Actions</th>
+			<th>Posted By</th>
 		</tr>
 	</thead>
 		<tbody>
@@ -40,14 +39,8 @@
 					<td> ${eachBook.id} </td> <!-- ID -->
 					<td> <a href="/books/${eachBook.id }">
 								<c:out value="${eachBook.bookName}"/></a></td><!-- Book -->
-					<td> <c:out value="${eachBook.author }"/></td><!-- Author -->
-					<%-- <td> <c:out value="${eachBook.book.userName }"/></td> --%>
-					<td> <a class="btn btn-success" href="/books/edit/${eachBook.id }">Edit</a></td>
-					<td>
-					<form action="/books/delete/${eachBook.id}" method="post">
-					<input type="hidden" name="_method" value="delete"/>
-					<input class="btn btn-danger" type="submit" value="Delete" />
-					</td>
+					<td> <c:out value="${eachBook.author}"/></td><!-- Author -->
+					<td> <c:out value="${eachBook.user.userName}"/></td>
 				</tr>
 			</c:forEach>
 		</tbody>

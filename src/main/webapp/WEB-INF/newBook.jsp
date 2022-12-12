@@ -20,9 +20,8 @@
 </head>
 <body>
 	<div class="container mt-5">
-    	<h1> WELCOME, <c:out value="${userName }"/> </h1>
    		<p> <a href="/logout">Logout</a>
-   		<h1>New Book</h1>
+   		<h1>Add a Book to Your Shelf!</h1>
    		<form:form action="/books/new" method="POST" modelAttribute="newBook" class="form">
   <p>
         	<form:label path="bookName">Book Name:</form:label>
@@ -42,6 +41,7 @@
     		<form:hidden path="user" value="${userId}" /> <!-- I set path = book. Heidi used donor. In Book.java (models) I use Book book. -->
     		<button type="submit" class="btn btn-primary">Add new book</button>
 		</form:form>
+		<p> <a href="/books"> Back to Book Club</a></p>
  	</div>
 </body>
 </html>

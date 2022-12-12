@@ -51,10 +51,10 @@ public class User {
   
     // TODO - Don't forget to generate getters and setters
   
-	//2.zero-argument constructors
+	//2. zero-argument constructors
     public User() {}
     
-    //3.getters and setters
+    //3. getters and setters
 
 	public Long getId() {
 		return id;

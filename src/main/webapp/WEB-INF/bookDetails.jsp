@@ -20,23 +20,34 @@
 </head>
 <body>
 <div class="container mt-5">
-	<h1>Welcome, <c:out value="${userName }"/>!</h1>
-	<h2>Book Details</h2>
+	<h3><c:out value="${book.user.userName}"/> read <c:out value="${book.bookName}"/>
+	by <c:out value="${book.author}"/>.</h3>
 	<table class="table">
-	<tr>
+<%-- 	<tr>
 		<td> Book Name: </td>
-		<td> <c:out value="${book.bookName }"/> </td>
+		<td> <c:out value="${book.bookName}"/> </td>
 	</tr>
 	<tr>
 		<td> Author: </td>
-		<td> <c:out value="${book.author }"/> </td>
-	</tr>
+		<td> <c:out value="${book.author}"/> </td>
+	</tr> --%>
 	<tr>
-		<td> Thoughts: </td>
-		<td> <c:out value="${book.description }"/> </td>
+		<td> Here are <c:out value="${book.user.userName}"/>'s thoughts: </td>
+		<td> <c:out value="${book.description}"/> </td>
 	</tr>
+	<c:choose>
+		<c:when test="${book.user.id == userId}">
+		<tr>
+			<td><a class="btn btn-success" href="/books/edit/${book.id }">Edit</a><form action="/books/delete/${book.id}" method="post">
+					<input type="hidden" name="_method" value="delete"/>
+					<input class="btn btn-danger" type="submit" value="Delete"/>
+					</form>
+			</td>
+		</tr>
+		</c:when>
+	</c:choose>
 	</table>
-	<p> <a href="/books"> Go Back</a></p>
+	<p> <a href="/books"> Back to Book Club</a></p>
 </div>
 
 </body>

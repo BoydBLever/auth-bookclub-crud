@@ -20,9 +20,7 @@
 </head>
 <body>
 	<div class="container mt-5">
-    	<h1> WELCOME, <c:out value="${userName }"/> </h1>
-   		<p> <a href="/logout">Logout</a>
-   		<h1>Edit Book</h1>
+   		<h1>Change your Entry</h1>
    		<form:form action="/books/edit/${id}" method="POST" modelAttribute="foundBook" class="form">
   		<input type="hidden" name="_method" value="put"/>
   	<p>
@@ -41,8 +39,9 @@
         	<form:textarea path="description" class="form-control"></form:textarea>
     </p>
     		<form:hidden path="user" /> 
-    		<button type="submit" class="btn btn-primary">Edit book</button>
+    		<button type="submit" class="btn btn-primary">Submit</button>
 		</form:form>
  	</div>
+ 	<p> <a href="/books"> Back to Book Club</a></p>
 </body>
 </html>
