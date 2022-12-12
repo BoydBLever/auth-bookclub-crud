@@ -1,0 +1,7 @@
+* {
+	background-color: black;
+}
+
+#container mt-5 {
+	display: flex;
+}
