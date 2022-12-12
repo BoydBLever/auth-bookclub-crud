@@ -21,7 +21,7 @@
 <body>
    <div class="container mt-5"> 
 		<h1> WELCOME, <c:out value="${userName }"/>! </h1>
-   		<p> <a href="/books/new">Add a book</a> | 
+   		<p> <a href="/books/new">Add Book</a> | 
    		<a href="/logout">Logout</a> </p>
    		<!-- TABLE: DO SOME COPY AND PASTE FROM "YESTERDAY'S" ONE-TO-MANY ASSIGNMENT-->
    	<table class="table">
@@ -42,7 +42,8 @@
 								<c:out value="${eachBook.bookName}"/></a></td><!-- Book -->
 					<td> <c:out value="${eachBook.author }"/></td><!-- Author -->
 					<%-- <td> <c:out value="${eachBook.book.userName }"/></td> --%>
-					<td> <a class="btn btn-primary" href="/books/edit/${eachBook.id }">Edit</a></td>
+					<td> <a class="btn btn-primary" href="/books/edit/${eachBook.id }">Edit</a>
+					<a class="btn btn-danger" href="/books/delete/${eachBook.id }">Delete</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

@@ -43,7 +43,7 @@ public class User {
     @Size(min=8, max=128, message="Confirm Password must be between 8 and 128 characters")
     private String confirm;
     
-    @OneToMany(mappedBy="book", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy="user", fetch = FetchType.LAZY)
 	private List<Book> books; //joined books
     
     //feel free to add created at and updated at; it doesn't really matter. (?)

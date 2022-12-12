@@ -19,6 +19,11 @@
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-   
+<h1>Book Details</h1>
+<h2>Book Name: <c:out value="${book.bookName }"/></h2>
+<h2>Author: <c:out value="${book.author }"/></h2>
+<h2>Description: <c:out value="${book.description }"/></h2>
+<p> <a href="/books"> Go Back</a></p>
+
 </body>
 </html>

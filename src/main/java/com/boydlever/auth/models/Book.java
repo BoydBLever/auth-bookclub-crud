@@ -39,8 +39,8 @@ public class Book {
 	private String description;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="book_id") //in MySQL foreign key
-    private Book book; //added one more attribute here, so getters and setters needed
+    @JoinColumn(name="user_id") //in MySQL foreign key
+    private User user; //added one more attribute here, so getters and setters needed
 	
 	
 	@Column(updatable=false)
@@ -109,12 +109,12 @@ public class Book {
 		this.updatedAt = updatedAt;
 	}
 
-	public Book getBook() {
-		return book;
+	public User getUser() {
+		return user;
 	}
 
-	public void setBook(Book book) {
-		this.book = book;
+	public void setUser(User user) {
+		this.user = user;
 	}
-
+	
 }

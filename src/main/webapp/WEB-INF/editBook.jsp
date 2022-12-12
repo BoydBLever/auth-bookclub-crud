@@ -19,6 +19,30 @@
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-   
+	<div class="container mt-5">
+    	<h1> WELCOME, <c:out value="${userName }"/> </h1>
+   		<p> <a href="/logout">Logout</a>
+   		<h1>Edit Book</h1>
+   		<form:form action="/books/edit/${id}" method="POST" modelAttribute="foundBook" class="form">
+  		<input type="hidden" name="_method" value="put"/>
+  	<p>
+        	<form:label path="bookName">Book Name:</form:label>
+        	<form:errors path="bookName"/>
+       		<form:input type="text" path="bookName" class="form-control"/>
+    </p>
+     <p>
+        	<form:label path="author">Author:</form:label>
+        	<form:errors path="author"/>
+        	<form:input type="text" path="author" class="form-control"/>
+    </p>
+     <p>
+        	<form:label path="description">Description:</form:label>
+        	<form:errors path="description"/>
+        	<form:textarea path="description" class="form-control"></form:textarea>
+    </p>
+    		<form:hidden path="user" /> 
+    		<button type="submit" class="btn btn-primary">Edit book</button>
+		</form:form>
+ 	</div>
 </body>
 </html>
