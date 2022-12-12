@@ -4,9 +4,12 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -34,6 +37,11 @@ public class Book {
 	@NotNull
 	@Size(min = 5, max = 200, message="Include should your thoughts on the book (5 characters or more).")
 	private String description;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="book_id") //in MySQL foreign key
+    private Book book; //added one more attribute here, so getters and setters needed
+	//is this right, Book book? Why?
 	
 	@Column(updatable=false)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
@@ -100,7 +108,6 @@ public class Book {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-	
 	
 	
 }

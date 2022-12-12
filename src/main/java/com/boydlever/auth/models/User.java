@@ -1,9 +1,13 @@
 package com.boydlever.auth.models;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
@@ -39,7 +43,10 @@ public class User {
     @Size(min=8, max=128, message="Confirm Password must be between 8 and 128 characters")
     private String confirm;
     
-    //feel free to add created at and updated at; it doesn't really matter.
+    @OneToMany(mappedBy="book", fetch = FetchType.LAZY)
+	private List<Book> books; //joined donations
+    
+    //feel free to add created at and updated at; it doesn't really matter. (?)
     //I'm just going to follow the platform and I'm not going to add this one here.
   
     // TODO - Don't forget to generate getters and setters
