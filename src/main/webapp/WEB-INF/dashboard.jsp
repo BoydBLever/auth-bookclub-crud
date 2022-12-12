@@ -11,7 +11,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
+    <title>Books</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/main.css"> <!-- change to match your file/naming structure -->
@@ -19,8 +19,35 @@
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <h1> WELCOME, <c:out value="${userName }"/>! </h1>
-   <p> <a href="/logout">Logout</a>
+   <div class="container mt-5"> 
+		<h1> WELCOME, <c:out value="${userName }"/>! </h1>
+   		<p> <a href="/books/new">Add a book</a> | 
+   		<a href="/logout">Logout</a> </p>
+   		
+   		<!-- TABLE: DO SOME COPY AND PASTE FROM "YESTERDAY'S" ONE-TO-MANY ASSIGNMENT-->
+   		<thead>
+		<tr>
+			<th>ID</th>
+			<th>Book</th>
+			<th>Author</th>
+			<!-- <th>-</th> -->
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<c:forEach var="eachBook" items="${bookList }">
+			<tr>
+				<td> ${eachBook.id} </td> <!-- ID -->
+				<td> <a href="/books/${eachBook.id }">${eachBook.bookName}</a></td><!-- Book -->
+				<td> <c:out value="${eachBook.author }"/></td><!-- Author -->
+				<%-- <td> <c:out value="${eachBook.book.userName }"/></td> --%>
+				<td> <a class="btn btn-primary" href="/books/edit/${eachBook.id }">Edit</a></td>
+			</tr>
+		</c:forEach>
+	</tbody>
+</table>
+   		
+   </div>
 </body>
 </body>
 </html>

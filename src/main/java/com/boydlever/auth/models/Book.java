@@ -41,7 +41,7 @@ public class Book {
 	@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="book_id") //in MySQL foreign key
     private Book book; //added one more attribute here, so getters and setters needed
-	//is this right, Book book? Why?
+	
 	
 	@Column(updatable=false)
 	@DateTimeFormat(pattern="yyyy-MM-dd")

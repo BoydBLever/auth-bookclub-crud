@@ -20,10 +20,11 @@ public class BookController {
 	private BookService bookService;
 	
     @GetMapping("/books")
-    public String dashboard(HttpSession session) {
+    public String dashboard(HttpSession session, Model model) {
     	if(session.getAttribute("userId") ==null) {
     		return "redirect:/";
     	}
+    	model.addAttribute("bookList", bookService.allBooks());
     	return "dashboard.jsp";
     }
     //Create book
