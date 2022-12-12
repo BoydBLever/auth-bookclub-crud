@@ -60,4 +60,13 @@ public class UserService {
 		//otherwise, return the user object
 		return user;
 	}
+	//find one user
+	public User oneUser(Long id) {
+		Optional<User> optionalUser = userRepo.findById(id);
+		if(optionalUser.isPresent()) {
+			return optionalUser.get();
+		}else {
+			return null;
+		}
+	}
 }
