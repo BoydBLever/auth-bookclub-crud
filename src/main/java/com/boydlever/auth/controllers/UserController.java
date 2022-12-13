@@ -67,7 +67,7 @@ public class UserController {
     	}
     	//2.2 if no errors, get the user infom from user and set UserId in the session
     	session.setAttribute("userId", loginUser.getId());
-    	session.setAttribute("userName", loginUser.getUserName());
+//    	session.setAttribute("userName", loginUser.getUserName()); //technically, I don't need userName
     		return "redirect:/books";
     }
         

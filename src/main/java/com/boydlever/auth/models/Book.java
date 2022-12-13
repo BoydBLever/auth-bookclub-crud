@@ -35,13 +35,13 @@ public class Book {
 	private String author;
 	
 	@NotNull
-	@Size(min = 5, max = 200, message="Include should your thoughts on the book (5 characters or more).")
+	@Size(min = 5, max = 200, message="Include your thoughts on the book (5 characters or more).")
 	private String description;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="user_id") //in MySQL foreign key
+    @JoinColumn(name="user_id") // MySQL foreign key
     private User user; //added one more attribute here, so getters and setters needed
-	
+	//the variable name is what its used for
 	
 	@Column(updatable=false)
 	@DateTimeFormat(pattern="yyyy-MM-dd")

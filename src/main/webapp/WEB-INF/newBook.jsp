@@ -38,7 +38,7 @@
         	<form:errors path="description"/>
         	<form:textarea path="description" class="form-control"></form:textarea>
     </p>
-    		<form:hidden path="user" value="${userId}" /> <!-- I set path = book. Heidi used donor. In Book.java (models) I use Book book. -->
+    		<%-- <form:hidden path="user" value="${userId}" /> --%>
     		<button type="submit" class="btn btn-primary">Add new book</button>
 		</form:form>
 		<p> <a href="/books"> Back to Book Club</a></p>

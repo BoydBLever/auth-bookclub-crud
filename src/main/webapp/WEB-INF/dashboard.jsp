@@ -20,7 +20,7 @@
 </head>
 <body>
    <div class="container mt-5"> 
-		<h1> WELCOME to the Book Club, <c:out value="${userName }"/>! </h1>
+		<h1> WELCOME to the Book Club, <c:out value="${user.userName }"/>! </h1>
    		<p> <a href="/books/new">Add Book</a> | 
    		<a href="/logout">Logout</a> </p>
    		<!-- TABLE: DO SOME COPY AND PASTE FROM "YESTERDAY'S" ONE-TO-MANY ASSIGNMENT-->

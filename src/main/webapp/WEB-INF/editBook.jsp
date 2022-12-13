@@ -21,7 +21,7 @@
 <body>
 	<div class="container mt-5">
    		<h1>Change your Entry</h1>
-   		<form:form action="/books/edit/${foundBook.id}" method="POST" modelAttribute="foundBook" class="form">
+   		<form:form action="/books/edit" method="POST" modelAttribute="foundBook" class="form">
   		<input type="hidden" name="_method" value="put"/>
   	<p>
         	<form:label path="bookName">Book Name:</form:label>
